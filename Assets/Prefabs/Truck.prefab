@@ -9910,16 +9910,17 @@ MonoBehaviour:
   playerInput: {fileID: 2905048061797601527}
   controller: {fileID: 2905048061797601530}
   body: {fileID: 5202816164368928651}
-  wheelAxis: {fileID: 3945073134454971290}
+  wheelAxis: {fileID: 0}
   baseSpeed: 0
-  maxSpeed: 10
+  maxSpeed: 15
   minSpeed: -6
-  acceleration: 8
+  acceleration: 6
   deceleration: 12
   speed: 0
   rotationSpeed: 0
   baseRotationSpeed: 5
   gravity: -9.81
+  angularSpeedMultiplier: 10
 --- !u!143 &2905048061797601530
 CharacterController:
   m_ObjectHideFlags: 0

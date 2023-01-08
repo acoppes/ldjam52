@@ -29,6 +29,8 @@ namespace Code
 
         public float gravity;
 
+        public float angularSpeedMultiplier = 2.0f;
+
         private void Awake()
         {
             speed = 0.2f;
@@ -77,15 +79,16 @@ namespace Code
         
             if (turnLeft.IsPressed())
             {
-                rotationDirection += 1f;
+                rotationDirection += speed > 0 ? 1f : -1f;
             }    
         
             if (turnRight.IsPressed())
             {
-                rotationDirection += -1f;
+                rotationDirection += speed > 0 ? -1f : 1f;
+                // rotationDirection += -1f;
             }
 
-            rotationSpeed = baseRotationSpeed + speed * 2;
+            rotationSpeed = baseRotationSpeed + speed * angularSpeedMultiplier;
         
             transform.localEulerAngles += new Vector3(0, rotationSpeed * rotationDirection * dt, 0);
 

@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using MyBox;
 using UnityEngine;
 
 namespace Code
 {
     public class Wheel : MonoBehaviour
     {
-        public float projectionStartingDistance = 10f;
-
-        private LayerMask terrainLayerMask;
-        private RaycastHit[] raycastHits = new RaycastHit[1];
-
         public LineRenderer trace;
 
         public bool traceDisabled;
@@ -23,34 +19,21 @@ namespace Code
 
         private void Awake()
         {
-            terrainLayerMask = LayerMask.GetMask("Terrain");
-
             lastTraceSpawnPosition = transform.position;
             lastTraceSpawnPosition.y = 0;
-
-            // tracePositions = new NativeArray<Vector3>(200, Allocator.Persistent);
         }
-
-        // private void OnDestroy()
-        // {
-        //     tracePositions.Dispose();
-        // }
 
         private void Update()
         {
-            Ray ray = new Ray()
-            {
-                origin = transform.position + Vector3.up * projectionStartingDistance,
-                direction = Vector3.up * -1f
-            };
+            var height = Terrain.activeTerrain.SampleHeight(transform.position);
 
-            var hits = Physics.RaycastNonAlloc(ray, raycastHits, projectionStartingDistance* 2, 
-                terrainLayerMask);
-            if (hits > 0)
-            {
-                transform.position = raycastHits[0].point;
-            }
+            transform.position = transform.position.SetY(height);
 
+            // if (TerrainUtils.GetTerrainPoint(transform.position, out var hit))
+            // {
+            //     transform.position = hit.point;
+            // }
+            
             var traceSpawnPosition = transform.position;
             traceSpawnPosition.y = 0;
 
