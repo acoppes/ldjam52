@@ -16,7 +16,16 @@ namespace Code
         
         // list<spice>
 
-        [ContextMenu("Spawn")]
+        [ButtonMethod]
+        public void DestroySpice()
+        {
+            while (transform.childCount > 0)
+            {
+                var child = transform.GetChild(0);
+                DestroyImmediate(child.gameObject);
+            }
+        }
+        
         [ButtonMethod]
         public void Spawn()
         {
@@ -29,9 +38,13 @@ namespace Code
                     
                 var spiceInstance = Instantiate(spicePrefab, transform);
 
-                var height = Terrain.activeTerrain.SampleHeight(new Vector3(position.x, 0,
-                    position.y));
-
+                var height = 0.0f;
+                
+                if (Terrain.activeTerrain != null)
+                {
+                    height = Terrain.activeTerrain.SampleHeight(new Vector3(position.x, 0,
+                        position.y));
+                }
                 var position3d = new Vector3(position.x, height, position.y);
 
                 spiceInstance.transform.position = position3d + new Vector3(0, 0.1f, 0);

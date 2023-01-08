@@ -25,7 +25,7 @@ namespace Code
 
         private void Update()
         {
-            var height = Terrain.activeTerrain.SampleHeight(transform.position);
+            var height = TerrainUtils.GetHeightAtPosition(transform.position);
 
             transform.position = transform.position.SetY(height);
 
