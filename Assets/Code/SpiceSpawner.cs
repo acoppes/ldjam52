@@ -3,7 +3,12 @@ using UnityEngine;
 
 namespace Code
 {
-    public class SpiceSpawner : MonoBehaviour
+    public interface ISpiceSource
+    {
+        void Collect(Spice spice);
+    }
+    
+    public class SpiceSpawner : MonoBehaviour, ISpiceSource
     {
         public bool spawnsOnStart;
 
@@ -49,6 +54,9 @@ namespace Code
 
                 spiceInstance.transform.position = position3d + new Vector3(0, 0.1f, 0);
                 spiceInstance.transform.localEulerAngles = new Vector3(90, Random.Range(0, 360), 0);
+
+                var spice = spiceInstance.GetComponent<Spice>();
+                spice.source = this;
             }
         }
 
@@ -58,6 +66,11 @@ namespace Code
             {
                 Spawn();
             }
+        }
+
+        public void Collect(Spice spice)
+        {
+            GameObject.Destroy(spice.gameObject);
         }
     }
 }

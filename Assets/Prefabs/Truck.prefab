@@ -9866,6 +9866,7 @@ GameObject:
   - component: {fileID: 2905048061797601525}
   - component: {fileID: 2905048061797601530}
   - component: {fileID: 2905048061797601527}
+  - component: {fileID: 6270304362268406094}
   m_Layer: 0
   m_Name: Truck
   m_TagString: Untagged
@@ -9908,6 +9909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 2905048061797601527}
+  spiceCollector: {fileID: 6270304362268406094}
   controller: {fileID: 2905048061797601530}
   body: {fileID: 5202816164368928651}
   wheelAxis: {fileID: 0}
@@ -9970,6 +9972,20 @@ MonoBehaviour:
   m_DefaultActionMap: Truck
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6270304362268406094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905048061797601531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c949b755104515b683ca855eb0253d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectEnabled: 0
+  spiceRate: 0
 --- !u!1 &4648505613122365944
 GameObject:
   m_ObjectHideFlags: 0

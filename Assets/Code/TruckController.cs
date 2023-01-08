@@ -7,6 +7,7 @@ namespace Code
     public class TruckController : MonoBehaviour
     {
         public PlayerInput playerInput;
+        public SpiceCollector spiceCollector;
         public CharacterController controller;
 
         public Transform body;
@@ -79,13 +80,14 @@ namespace Code
         
             if (turnLeft.IsPressed())
             {
-                rotationDirection += speed > 0 ? 1f : -1f;
+                // rotationDirection += speed > 0 ? 1f : -1f;
+                rotationDirection += 1f;
             }    
         
             if (turnRight.IsPressed())
             {
-                rotationDirection += speed > 0 ? -1f : 1f;
-                // rotationDirection += -1f;
+                // rotationDirection += speed > 0 ? -1f : 1f;
+                rotationDirection += -1f;
             }
 
             rotationSpeed = baseRotationSpeed + speed * angularSpeedMultiplier;
@@ -100,6 +102,11 @@ namespace Code
             if (body != null && wheelAxis != null)
             {
                 body.up = wheelAxis.up;
+            }
+
+            if (spiceCollector != null)
+            {
+                spiceCollector.isEnabled = Mathf.Abs(speed) < 0.01f;
             }
         }
     }

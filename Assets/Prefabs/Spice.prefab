@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7330904848748610792}
   - component: {fileID: 1582608688149870427}
   - component: {fileID: 214950525449699886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

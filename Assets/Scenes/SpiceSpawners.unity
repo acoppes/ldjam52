@@ -437,6 +437,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Truck
       objectReference: {fileID: 0}
+    - target: {fileID: 6270304362268406094, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
+        type: 3}
+      propertyPath: range
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270304362268406094, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
+        type: 3}
+      propertyPath: cooldownTotal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
 --- !u!4 &166482923 stripped
@@ -1147,7 +1157,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 439
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1169,17 +1179,17 @@ PrefabInstance:
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: maxSpawn
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: minSpawn
-      value: 500
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: spawnRadius
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
@@ -1209,7 +1219,7 @@ PrefabInstance:
     - target: {fileID: 865730378485818925, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818925, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}

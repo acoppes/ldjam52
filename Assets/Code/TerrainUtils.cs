@@ -8,8 +8,10 @@ namespace Code
         private const float ProjectionStartingDistance = 100f;
         
         private static readonly RaycastHit[] RaycastHits = new RaycastHit[10];
+        private static readonly Collider[] Colliders = new Collider[100];
         
         private static readonly LayerMask TerrainLayerMask = LayerMask.GetMask("Terrain");
+        private static readonly LayerMask SpiceLayerMask = LayerMask.GetMask("Spice");
 
         public static float GetHeightAtPosition(Vector3 position)
         {
@@ -48,6 +50,28 @@ namespace Code
             }
 
             return false;
+        }
+
+        public static Spice GetNearestSpice(Vector3 position, float range)
+        {
+            var collidersFound = DrawPhysics.OverlapSphereNonAlloc(position, range, Colliders, SpiceLayerMask,
+                QueryTriggerInteraction.Collide);
+
+            for (int i = 0; i < collidersFound; i++)
+            {
+                var collider = Colliders[i];
+                var spice = collider.GetComponent<Spice>();
+                if (spice == null)
+                {
+                    continue;
+                }
+                
+                // TODO: nearest
+
+                return spice;
+            }
+            
+            return null;
         }
     }
 }
