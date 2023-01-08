@@ -1,14 +1,14 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Code
 {
-    public class TruckController : MonoBehaviour
+    public class Harvester : MonoBehaviour
     {
         public PlayerInput playerInput;
         public SpiceCollector spiceCollector;
         public CharacterController controller;
+        public Animator animatorController;
 
         public Transform body;
         public WheelAxis wheelAxis;
@@ -32,6 +32,8 @@ namespace Code
 
         public float angularSpeedMultiplier = 2.0f;
 
+        public float stopSpeedDetection = 0.01f;
+        
         private void Awake()
         {
             speed = 0.2f;
@@ -62,11 +64,11 @@ namespace Code
             }
             else
             {
-                if (speed >= 0.01f)
+                if (speed >= stopSpeedDetection)
                 {
                     speed -= deceleration * dt;
                 }
-                else if (speed <= -0.01f)
+                else if (speed <= -stopSpeedDetection)
                 {
                     speed += deceleration * dt;
                 }
@@ -104,9 +106,16 @@ namespace Code
                 body.up = wheelAxis.up;
             }
 
+            var isMoving = Mathf.Abs(speed) > 0.01f;
+
             if (spiceCollector != null)
             {
-                spiceCollector.isEnabled = Mathf.Abs(speed) < 0.01f;
+                spiceCollector.isEnabled = !isMoving;
+
+                if (animatorController != null)
+                {
+                    animatorController.SetBool("harvesting", spiceCollector.isHarvesting && !isMoving);
+                }
             }
         }
     }

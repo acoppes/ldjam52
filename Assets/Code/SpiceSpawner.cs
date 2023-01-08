@@ -11,6 +11,10 @@ namespace Code
     public class SpiceSpawner : MonoBehaviour, ISpiceSource
     {
         public bool spawnsOnStart;
+        public bool spawnsOverTime;
+
+        public float cooldownTotal;
+        private float cooldownCurrent;
 
         public GameObject spicePrefab;
 
@@ -18,7 +22,7 @@ namespace Code
 
         public int minSpawn;
         public int maxSpawn;
-        
+
         // list<spice>
 
         [ButtonMethod]
@@ -34,7 +38,11 @@ namespace Code
         [ButtonMethod]
         public void Spawn()
         {
-            var spiceSpawnCount = Random.Range(minSpawn, maxSpawn);
+            Spawn(Random.Range(minSpawn, maxSpawn));
+        }
+        
+        public void Spawn(int spiceSpawnCount)
+        {
             var spawnerPosition = new Vector2(transform.position.x, transform.position.z);
             
             for (var i = 0; i < spiceSpawnCount; i++)
