@@ -5,40 +5,46 @@ using UnityEngine.InputSystem;
 
 public class WormController : MonoBehaviour
 {
+    public PlayerInput playerInput;
     public CharacterController controller;
 
     public float baseSpeed;
-    public float speed;
+    public float maxSpeed;
+
+    private float speed;
 
     public float rotationSpeed;
 
     // Update is called once per frame
     void Update()
     {
-        var totalSpeed = speed + baseSpeed;
+        var totalSpeed = baseSpeed + speed;
 
         var dt = Time.deltaTime;
+
+        var accelerate = playerInput.actions["Accelerate"];
+        var turnRight = playerInput.actions["TurnRight"];
+        var turnLeft = playerInput.actions["TurnLeft"];
+
+        var rotation = 0.0f;
         
-        if (Keyboard.current.upArrowKey.isPressed)
+        if (accelerate.IsPressed())
         {
             controller.Move(transform.forward * totalSpeed * dt);
             // controller.SimpleMove(speed);
         }    
         
-        if (Keyboard.current.leftArrowKey.isPressed)
+        if (turnLeft.IsPressed())
         {
-            // controller.Move(transform.right * -1f * speed * Time.deltaTime);
-            // controller.SimpleMove(speed);
+            rotation += 1f;
         }    
         
-        if (Keyboard.current.rightArrowKey.isPressed)
+        if (turnRight.IsPressed())
         {
-            transform.localEulerAngles += new Vector3(0, rotationSpeed * dt, 0);
-
-            // var rotation = Quaternion.RotateTowards(transform.rotation, )
-
-            // controller.Move(transform.right * speed * Time.deltaTime);
-            // controller.SimpleMove(speed);
+            rotation += -1f;
         }    
+        
+        transform.localEulerAngles += new Vector3(0, rotationSpeed * rotation * dt, 0);
+        controller.Move(transform.forward * totalSpeed * dt);
     }
 }
