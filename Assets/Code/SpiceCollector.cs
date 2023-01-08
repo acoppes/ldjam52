@@ -1,4 +1,5 @@
 ﻿using System;
+using Gemserk.Gameplay;
 using UnityEngine;
 
 namespace Code
@@ -12,17 +13,15 @@ namespace Code
         [NonSerialized]
         public bool isEnabled = false;
 
-        public float cooldownTotal;
-        private float cooldownCurrent;
+        public Cooldown harvestCooldown = new Cooldown(0.5f);
 
         [NonSerialized]
         public float total = 0;
 
         [NonSerialized]
         public bool isHarvesting;
-        
-        public float stopHarvestingDelay;
-        private float stopHarvestingTime;
+
+        public Cooldown stopHarvestingCooldown = new Cooldown(0.3f);
 
         private void Start()
         {
@@ -31,10 +30,10 @@ namespace Code
 
         public void Update()
         {
-            cooldownCurrent += Time.deltaTime;
-            stopHarvestingTime += Time.deltaTime;
+            stopHarvestingCooldown.Increase(Time.deltaTime);
+            harvestCooldown.Increase(Time.deltaTime);
             
-            if (isEnabled && cooldownCurrent > cooldownTotal)
+            if (isEnabled && harvestCooldown.IsReady)
             {
                 // get nearby spice and collect it
                 var spice = TerrainUtils.GetNearestSpice(transform.position, range);
@@ -43,17 +42,18 @@ namespace Code
                 {
                     total += 1;
                     spice.Collect();
-                    cooldownCurrent = 0;
-
+                    
                     isHarvesting = true;
-
-                    stopHarvestingTime = 0;
+                    
+                    harvestCooldown.Reset();
+                    stopHarvestingCooldown.Reset();
                 }
             }
 
-            if (isHarvesting && stopHarvestingTime > stopHarvestingDelay)
+            if (isHarvesting && stopHarvestingCooldown.IsReady)
             {
                 isHarvesting = false;
+                stopHarvestingCooldown.Reset();
             }
         }
 
