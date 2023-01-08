@@ -10,6 +10,8 @@ namespace Code
         public CharacterController controller;
         public Animator animatorController;
 
+        public GameHud gameHud;
+
         public Transform body;
         public WheelAxis wheelAxis;
 
@@ -19,6 +21,7 @@ namespace Code
 
         public float acceleration;
         public float deceleration;
+        public float breakDeceleration;
 
         [MyBox.ReadOnly]
         public float speed;
@@ -56,11 +59,25 @@ namespace Code
         
             if (accelerate.IsPressed())
             {
-                speed += acceleration * dt;
+                if (speed > 0)
+                {
+                    speed += acceleration * dt;
+                }
+                else
+                {
+                    speed += (acceleration + breakDeceleration) * dt;
+                }
             }
             else if (reverse.IsPressed())
             {
-                speed -= acceleration * dt;
+                if (speed > 0)
+                {
+                    speed -= (acceleration + breakDeceleration) * dt;
+                }
+                else
+                {
+                    speed -= acceleration * dt;
+                }
             }
             else
             {
@@ -115,6 +132,11 @@ namespace Code
                 if (animatorController != null)
                 {
                     animatorController.SetBool("harvesting", spiceCollector.isHarvesting && !isMoving);
+                }
+
+                if (gameHud != null)
+                {
+                    gameHud.UpdateSpice(spiceCollector.total);
                 }
             }
         }

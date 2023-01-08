@@ -57,21 +57,27 @@ namespace Code
             var collidersFound = DrawPhysics.OverlapSphereNonAlloc(position, range, Colliders, SpiceLayerMask,
                 QueryTriggerInteraction.Collide);
 
-            for (int i = 0; i < collidersFound; i++)
-            {
-                var collider = Colliders[i];
-                var spice = collider.GetComponent<Spice>();
-                if (spice == null)
-                {
-                    continue;
-                }
-                
-                // TODO: nearest
+            if (collidersFound == 0)
+                return null;
 
-                return spice;
-            }
-            
-            return null;
+            var collider = Colliders[Random.Range(0, collidersFound)];
+            return collider.GetComponent<Spice>();
+
+            // for (int i = 0; i < collidersFound; i++)
+            // {
+            //     var collider = Colliders[i];
+            //     var spice = collider.GetComponent<Spice>();
+            //     if (spice == null)
+            //     {
+            //         continue;
+            //     }
+            //     
+            //     // TODO: nearest
+            //
+            //     return spice;
+            // }
+            //
+            // return null;
         }
     }
 }

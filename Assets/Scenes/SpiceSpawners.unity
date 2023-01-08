@@ -1867,6 +1867,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 627564081}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &627564084 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 28792044447674185, guid: 2e2f91d0d0372df41951b9efb11b3179,
+    type: 3}
+  m_PrefabInstance: {fileID: 627564081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56c741fc574436bbbe9a4d504fff1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &633546937
 GameObject:
   m_ObjectHideFlags: 0
@@ -4319,17 +4331,17 @@ PrefabInstance:
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: maxSpawn
-      value: 20
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: minSpawn
-      value: 20
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: spawnRadius
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
@@ -4359,7 +4371,7 @@ PrefabInstance:
     - target: {fileID: 865730378485818925, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818925, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
@@ -5501,6 +5513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2905048061797601525, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
+      propertyPath: gameHud
+      value: 
+      objectReference: {fileID: 627564084}
+    - target: {fileID: 2905048061797601525, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
+        type: 3}
       propertyPath: stopSpeedDetection
       value: 0.02
       objectReference: {fileID: 0}
@@ -5508,51 +5525,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Harvester
-      objectReference: {fileID: 0}
-    - target: {fileID: 4448522276467246249, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678063220189792197, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678063220189792197, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678063220189792197, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678063220189792197, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678063220189792197, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.67768776
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678063220189792197, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.9150943
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678063220189792197, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9105866
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678063220189792197, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
-        type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
