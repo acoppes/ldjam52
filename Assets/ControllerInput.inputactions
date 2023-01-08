@@ -15,6 +15,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Reverse",
+                    "type": "Button",
+                    "id": "4ebd326f-af2e-44a7-85b1-5e90b599513a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "TurnRight",
                     "type": "Button",
                     "id": "c422fef1-4411-46d6-afd0-deee4e1ea8d0",
@@ -97,6 +106,28 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "TurnLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44d23c0e-8c6c-44e4-95c3-78072aa624a2",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Reverse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c0c82e2-68c9-465d-9d53-a9fd56377b31",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Reverse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
