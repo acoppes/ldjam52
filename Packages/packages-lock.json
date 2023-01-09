@@ -9,6 +9,13 @@
       },
       "hash": "701527564a2ce99a26a65b8ad9fe53772a3f0739"
     },
+    "com.oss.leantween": {
+      "version": "2.50.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.unity.burst": {
       "version": "1.8.2",
       "depth": 1,
@@ -54,7 +61,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.16",
+      "version": "3.0.17",
       "depth": 0,
       "source": "registry",
       "dependencies": {

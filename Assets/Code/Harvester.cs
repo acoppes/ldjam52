@@ -36,6 +36,8 @@ namespace Code
         public float angularSpeedMultiplier = 2.0f;
 
         public float stopSpeedDetection = 0.01f;
+
+        public bool controlDisabled = false;
         
         private void Awake()
         {
@@ -57,7 +59,7 @@ namespace Code
 
             var rotationDirection = 0.0f;
         
-            if (accelerate.IsPressed())
+            if (accelerate.IsPressed() && !controlDisabled)
             {
                 if (speed > 0)
                 {
@@ -68,7 +70,7 @@ namespace Code
                     speed += (acceleration + breakDeceleration) * dt;
                 }
             }
-            else if (reverse.IsPressed())
+            else if (reverse.IsPressed() && !controlDisabled)
             {
                 if (speed > 0)
                 {
@@ -97,13 +99,13 @@ namespace Code
 
             speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
         
-            if (turnLeft.IsPressed())
+            if (turnLeft.IsPressed() && !controlDisabled)
             {
                 // rotationDirection += speed > 0 ? 1f : -1f;
                 rotationDirection += 1f;
             }    
         
-            if (turnRight.IsPressed())
+            if (turnRight.IsPressed() && !controlDisabled)
             {
                 // rotationDirection += speed > 0 ? -1f : 1f;
                 rotationDirection += -1f;
@@ -127,7 +129,7 @@ namespace Code
 
             if (spiceCollector != null)
             {
-                spiceCollector.isEnabled = !isMoving;
+                spiceCollector.isEnabled = !isMoving && !controlDisabled;
 
                 if (animatorController != null)
                 {

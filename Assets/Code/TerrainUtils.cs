@@ -13,6 +13,27 @@ namespace Code
         private static readonly LayerMask TerrainLayerMask = LayerMask.GetMask("Terrain");
         private static readonly LayerMask SpiceLayerMask = LayerMask.GetMask("Spice");
 
+        public static Vector3 RandomPositionInsideTerrain()
+        {
+            var bounds = new Bounds(Vector3.zero, Vector3.one);
+            
+            if (Terrain.activeTerrain != null)
+            {
+                bounds = Terrain.activeTerrain.terrainData.bounds;
+            }
+            else
+            {
+                var terrainObject = GameObject.Find("Terrain");
+                if (terrainObject != null)
+                {
+                    bounds = terrainObject.GetComponent<MeshCollider>().bounds;
+                }
+            }
+            
+            return new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x), 0,
+                UnityEngine.Random.Range(bounds.min.z, bounds.max.z));
+        }
+
         public static float GetHeightAtPosition(Vector3 position)
         {
             if (Terrain.activeTerrain != null)
