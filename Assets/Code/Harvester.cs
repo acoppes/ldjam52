@@ -13,7 +13,8 @@ namespace Code
         public GameHud gameHud;
 
         public Transform body;
-        public WheelAxis wheelAxis;
+        
+        public WheelAxis axisMain;
 
         public float baseSpeed;
         public float maxSpeed;
@@ -120,9 +121,12 @@ namespace Code
 
             controller.Move(motion);
 
-            if (body != null && wheelAxis != null)
+            if (body != null && axisMain != null)
             {
-                body.up = wheelAxis.up;
+                var eulerAngles = body.localEulerAngles;
+                eulerAngles.x = Vector3.SignedAngle(transform.up, axisMain.up, transform.right);
+                // eulerAngles.x = Vector3.Angle(transform.up, axisMain.up);
+                body.localEulerAngles = eulerAngles;
             }
 
             var isMoving = Mathf.Abs(speed) > 0.01f;

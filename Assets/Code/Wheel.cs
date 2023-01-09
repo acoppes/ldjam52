@@ -9,6 +9,7 @@ namespace Code
     {
         public LineRenderer trace;
 
+        public bool projectToTerrainDisabled;
         public bool traceDisabled;
 
         public float traceSpawnDistance = 1f;
@@ -25,10 +26,12 @@ namespace Code
 
         private void Update()
         {
-            var height = TerrainUtils.GetHeightAtPosition(transform.position);
-
-            transform.position = transform.position.SetY(height);
-
+            if (!projectToTerrainDisabled)
+            {
+                var height = TerrainUtils.GetHeightAtPosition(transform.position);
+                transform.position = transform.position.SetY(height);
+            }
+            
             // if (TerrainUtils.GetTerrainPoint(transform.position, out var hit))
             // {
             //     transform.position = hit.point;
