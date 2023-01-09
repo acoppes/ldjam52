@@ -19,7 +19,7 @@ namespace Code
             harvesterVirtualCamera.gameObject.SetActive(true);
             shaiHuludVirtualCamera.gameObject.SetActive(false);
 
-            // StartCoroutine(GameLogic());
+            StartCoroutine(Intro());
             
             shaiHulud.states.onEnterState += OnShaiHuludEnterState;
             shaiHulud.states.onExitState += OnShaiHuludExitState;
@@ -75,61 +75,12 @@ namespace Code
 
                 
             }
-            
-            // if (state.Equals("Leave"))
-            // {
-            //     // // if harvester is alive
-            //     // if (harvester.gameObject.activeInHierarchy)
-            //     // {
-            //     //     harvesterVirtualCamera.gameObject.SetActive(true);
-            //     //     shaiHuludVirtualCamera.gameObject.SetActive(false);
-            //     //     harvester.controlDisabled = false;
-            //     // }
-            //     // else
-            //     // {
-            //     //     // leantween and show game over
-            //     // }
-            //
-            //     shaiHulud.transform.position = TerrainUtils.RandomPositionInsideTerrain();
-            // }
         }
 
-        private IEnumerator GameLogic()
+        private IEnumerator Intro()
         {
-            while (true)
-            {
-                       
-                
-                yield return null;
-            }
-        }
-
-        public void Update()
-        {
-            // if (Keyboard.current.digit1Key.wasPressedThisFrame)
-            // {
-            //     // shaiHulud.
-            //     var noise = harvesterVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-            //     noise.m_AmplitudeGain = 0.25f;
-            //     noise.m_FrequencyGain = 1;
-            // }
-            //
-            // if (Keyboard.current.digit2Key.wasPressedThisFrame)
-            // {
-            //     // shaiHulud.
-            //     var noise = harvesterVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-            //     noise.m_AmplitudeGain = 0.5f;
-            //     noise.m_FrequencyGain = 1.5f;
-            // }
-            //
-            // if (Keyboard.current.digit3Key.wasPressedThisFrame)
-            // {
-            //     var noise = harvesterVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-            //     noise.m_AmplitudeGain = 0.1f;
-            //     noise.m_FrequencyGain = 1.0f;
-            //
-            //     shaiHulud.Spawn(harvester.transform.position);
-            // }
+            yield return new WaitForSeconds(1.0f);
+            gameHud.SetMission("Harvest 1000t of Spice in order to get evacuated and don't get us waiting.");
         }
     }
 }

@@ -252,6 +252,7 @@ MonoBehaviour:
   gravity: -9.81
   angularSpeedMultiplier: 10
   stopSpeedDetection: 0.02
+  controlDisabled: 0
 --- !u!143 &2905048061797601530
 CharacterController:
   m_ObjectHideFlags: 0
@@ -316,9 +317,9 @@ MonoBehaviour:
   startingSpice: 100
   range: 4
   harvestCooldown:
-    total: 0.2
+    total: 0.1
   stopHarvestingCooldown:
-    total: 0.3
+    total: 0.2
 --- !u!95 &903409120178964849
 Animator:
   serializedVersion: 5
