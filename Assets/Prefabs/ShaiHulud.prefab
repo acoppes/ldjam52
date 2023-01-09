@@ -69495,7 +69495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae96013fcf384350b7a1354f5b08c08b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTargetSpeed: 17
+  followTargetSpeed: 20
   followTargetStopDistance: 2
   attackRange: 17
   attackPosition: {x: 0, y: 3.5, z: 0}

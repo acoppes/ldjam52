@@ -70,6 +70,8 @@ namespace Code
             
             if (state.Equals("Spawning"))
             {
+                transform.position = transform.position.SetY(TerrainUtils.GetHeightAtPosition(transform.position));
+                
                 var outerEmission = outerParticleSystem.emission;
                 outerEmission.enabled = true;
                 
