@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Cinemachine;
 using UnityEngine;
 
@@ -14,15 +15,30 @@ namespace Code
 
         public GameHud gameHud;
 
+        private int currentMission;
+
+        private int currentTotalTarget;
+        
+        public int[] totals = new[] { 1000, 2000, 4000, 10000 };
+        public string[] missions;
+
         private void Start()
         {
             harvesterVirtualCamera.gameObject.SetActive(true);
             shaiHuludVirtualCamera.gameObject.SetActive(false);
 
-            StartCoroutine(Intro());
+            StartCoroutine(ShowNextMission());
             
             shaiHulud.states.onEnterState += OnShaiHuludEnterState;
             shaiHulud.states.onExitState += OnShaiHuludExitState;
+            
+            shaiHulud.transform.position = TerrainUtils.RandomPositionInsideTerrain();
+
+            currentTotalTarget = totals[currentMission];
+
+            var harvesterPosition = harvester.transform.position;
+            harvesterPosition.y = TerrainUtils.GetHeightAtPosition(harvesterPosition);
+            harvester.transform.position = harvesterPosition;
         }
 
         private void OnShaiHuludEnterState(string state)
@@ -77,10 +93,22 @@ namespace Code
             }
         }
 
-        private IEnumerator Intro()
+        private IEnumerator ShowNextMission()
         {
-            yield return new WaitForSeconds(1.0f);
-            gameHud.SetMission("Harvest 1000t of Spice in order to get evacuated and don't get us waiting.");
+            yield return new WaitForSeconds(2.0f);
+            var mission = string.Format(missions[currentMission], totals[currentMission]);
+            gameHud.SetMission(mission);
+        }
+
+        private void Update()
+        {
+            if (harvester != null && harvester.spiceCollector.total > currentTotalTarget)
+            {
+                currentMission++;
+                StartCoroutine(ShowNextMission());
+
+                currentTotalTarget += totals[currentMission];
+            }
         }
     }
 }
