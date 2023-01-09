@@ -15,6 +15,8 @@ namespace Code
         public Transform body;
         
         public WheelAxis axisMain;
+        public WheelAxis axisFront;
+        public WheelAxis axisBack;
 
         public float baseSpeed;
         public float maxSpeed;
@@ -121,12 +123,23 @@ namespace Code
 
             controller.Move(motion);
 
-            if (body != null && axisMain != null)
+            if (body != null)
             {
-                var eulerAngles = body.localEulerAngles;
-                eulerAngles.x = Vector3.SignedAngle(transform.up, axisMain.up, transform.right);
-                // eulerAngles.x = Vector3.Angle(transform.up, axisMain.up);
-                body.localEulerAngles = eulerAngles;
+                if (axisMain != null)
+                {
+                    var eulerAngles = body.localEulerAngles;
+                    eulerAngles.x = Vector3.SignedAngle(transform.up, axisMain.up, transform.right);
+                    // eulerAngles.x = Vector3.Angle(transform.up, axisMain.up);
+                    body.localEulerAngles = eulerAngles;
+                }
+
+                if (axisFront != null && axisBack != null)
+                {
+                    var up = (axisFront.up + axisBack.up) * 0.5f;
+                    var eulerAngles = body.localEulerAngles;
+                    eulerAngles.z = Vector3.SignedAngle(transform.up, up, transform.forward);
+                    body.localEulerAngles = eulerAngles;
+                }
             }
 
             var isMoving = Mathf.Abs(speed) > 0.01f;

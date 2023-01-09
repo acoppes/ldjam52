@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using MyBox;
+using Unity.VisualScripting;
+using UnityEngine;
 using Vertx.Debugging;
 
 namespace Code
@@ -12,6 +14,16 @@ namespace Code
         
         private static readonly LayerMask TerrainLayerMask = LayerMask.GetMask("Terrain");
         private static readonly LayerMask SpiceLayerMask = LayerMask.GetMask("Spice");
+        
+        public static Vector3 RandomPositionNearPosition(Vector3 position, float distance)
+        {
+            var randomPosition = UnityEngine.Random.insideUnitCircle * distance;
+            var newPosition = position + randomPosition.ToVector3();
+
+            newPosition.y = TerrainUtils.GetHeightAtPosition(newPosition);
+
+            return newPosition;
+        }
 
         public static Vector3 RandomPositionInsideTerrain()
         {

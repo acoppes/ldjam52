@@ -22,6 +22,8 @@ namespace Code
         public int[] totals = new[] { 1000, 2000, 4000, 10000 };
         public string[] missions;
 
+        public float respawnDistance = 500f;
+
         private void Start()
         {
             harvesterVirtualCamera.gameObject.SetActive(true);
@@ -32,7 +34,7 @@ namespace Code
             shaiHulud.states.onEnterState += OnShaiHuludEnterState;
             shaiHulud.states.onExitState += OnShaiHuludExitState;
             
-            shaiHulud.transform.position = TerrainUtils.RandomPositionInsideTerrain();
+            shaiHulud.transform.position = TerrainUtils.RandomPositionNearPosition(harvester.transform.position, respawnDistance);
 
             currentTotalTarget = totals[currentMission];
 
@@ -84,7 +86,8 @@ namespace Code
                 // if harvester is alive
                 if (harvester.gameObject.activeInHierarchy)
                 {
-                    shaiHulud.transform.position = TerrainUtils.RandomPositionInsideTerrain();
+                    shaiHulud.transform.position = TerrainUtils.
+                        RandomPositionNearPosition(harvester.transform.position, respawnDistance);
                 }
                 else
                 {

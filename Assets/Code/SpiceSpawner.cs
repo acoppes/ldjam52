@@ -1,5 +1,7 @@
-﻿using MyBox;
+﻿using System;
+using MyBox;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Code
 {
@@ -79,6 +81,12 @@ namespace Code
         public void Collect(Spice spice)
         {
             GameObject.Destroy(spice.gameObject);
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, spawnRadius);
         }
     }
 }
