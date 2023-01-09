@@ -5,6 +5,14 @@ using Vertx.Debugging;
 
 namespace Code
 {
+    public static class Vector3Extensions
+    {
+        public static Vector2 XZ(this Vector3 v)
+        {
+            return new Vector2(v.x, v.z);
+        }
+    }
+    
     public static class TerrainUtils
     {
         private const float ProjectionStartingDistance = 100f;
@@ -15,9 +23,12 @@ namespace Code
         private static readonly LayerMask TerrainLayerMask = LayerMask.GetMask("Terrain");
         private static readonly LayerMask SpiceLayerMask = LayerMask.GetMask("Spice");
         
-        public static Vector3 RandomPositionNearPosition(Vector3 position, float distance)
+        public static Vector3 RandomPositionNearPosition(Vector3 position, float minDistance, float maxDistance)
         {
-            var randomPosition = UnityEngine.Random.insideUnitCircle * distance;
+            var randomPosition = Vector2.right * UnityEngine.Random.Range(minDistance, maxDistance);
+            randomPosition = randomPosition.Rotate(UnityEngine.Random.Range(0, 360) * Mathf.Deg2Rad);
+
+            // var randomPosition = UnityEngine.Random.insideUnitCircle * maxDistance;
             var newPosition = position + randomPosition.ToVector3();
 
             newPosition.y = TerrainUtils.GetHeightAtPosition(newPosition);

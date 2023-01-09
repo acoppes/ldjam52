@@ -2,6 +2,7 @@
 using System.Collections;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Code
 {
@@ -23,6 +24,7 @@ namespace Code
         public string[] missions;
 
         public float respawnDistance = 500f;
+        public float respawnMinDistance = 100f;
 
         private void Start()
         {
@@ -34,7 +36,7 @@ namespace Code
             shaiHulud.states.onEnterState += OnShaiHuludEnterState;
             shaiHulud.states.onExitState += OnShaiHuludExitState;
             
-            shaiHulud.transform.position = TerrainUtils.RandomPositionNearPosition(harvester.transform.position, respawnDistance);
+            shaiHulud.transform.position = TerrainUtils.RandomPositionNearPosition(harvester.transform.position, respawnMinDistance, respawnDistance);
 
             currentTotalTarget = totals[currentMission];
 
@@ -87,15 +89,20 @@ namespace Code
                 if (harvester.gameObject.activeInHierarchy)
                 {
                     shaiHulud.transform.position = TerrainUtils.
-                        RandomPositionNearPosition(harvester.transform.position, respawnDistance);
+                        RandomPositionNearPosition(harvester.transform.position, respawnMinDistance, respawnDistance);
                 }
                 else
                 {
                     // leantween and show game over
+                    StartCoroutine(RestartGame());
                 }
-
-                
             }
+        }
+        
+        private IEnumerator RestartGame()
+        {
+            yield return new WaitForSeconds(5.0f);
+            SceneManager.LoadScene("Game");
         }
 
         private IEnumerator ShowNextMission()

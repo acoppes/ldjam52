@@ -4210,12 +4210,12 @@ PrefabInstance:
     - target: {fileID: 865730378485818922, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: spawnRadius
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818924, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
       propertyPath: m_Name
-      value: SpiceSpawner (9)
+      value: InitialSpiceStore
       objectReference: {fileID: 0}
     - target: {fileID: 865730378485818924, guid: b32ae06726ac64c4ba9d67b08abfd9db,
         type: 3}
@@ -22138,6 +22138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: respawnDistance
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798563150082758591, guid: 47d06a28232d92245abd4168fa75243e,
+        type: 3}
+      propertyPath: respawnMinDistance
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2798563150082758591, guid: 47d06a28232d92245abd4168fa75243e,
         type: 3}
