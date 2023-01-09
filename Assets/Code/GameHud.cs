@@ -13,6 +13,8 @@ namespace Code
 
         public float missionTextDuration;
 
+        public int targetSpice;
+
         private void Awake()
         {
             missionObject.SetActive(false);
@@ -30,7 +32,7 @@ namespace Code
         
         public void UpdateSpice(float spice)
         {
-            text.text = $"{spice:0}t";
+            text.text = $"{spice:0}/{targetSpice}";
         }
     }
 }

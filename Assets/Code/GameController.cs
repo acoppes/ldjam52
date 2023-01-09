@@ -39,6 +39,8 @@ namespace Code
             var harvesterPosition = harvester.transform.position;
             harvesterPosition.y = TerrainUtils.GetHeightAtPosition(harvesterPosition);
             harvester.transform.position = harvesterPosition;
+
+            gameHud.targetSpice = currentTotalTarget;
         }
 
         private void OnShaiHuludEnterState(string state)
@@ -108,6 +110,7 @@ namespace Code
                 StartCoroutine(ShowNextMission());
 
                 currentTotalTarget += totals[currentMission];
+                gameHud.targetSpice = currentTotalTarget;
             }
         }
     }
