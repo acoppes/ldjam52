@@ -49,7 +49,7 @@ MonoBehaviour:
   harvesterVirtualCamera: {fileID: 0}
   shaiHuludVirtualCamera: {fileID: 0}
   gameHud: {fileID: 0}
-  totals: e8030000d0070000a00f0000a0860100
+  totals: c80000002c010000bc020000b80b0000
   missions:
   - Harvest {0}t of Spice in order to get evac and don't get us waiting
   - Initial tests are indeed promising, now harvest {0}t more, we will think about
@@ -57,3 +57,5 @@ MonoBehaviour:
   - We got Emperor's interest, he wants {0}t more, only with that you will evac.
   - Letting you live was never on the table, you can't reveal information about this
     prototype.
+  respawnDistance: 1000
+  respawnMinDistance: 300
