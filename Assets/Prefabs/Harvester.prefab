@@ -289,9 +289,9 @@ MonoBehaviour:
   animatorController: {fileID: 903409120178964849}
   gameHud: {fileID: 0}
   body: {fileID: 5202816164368928651}
-  axisMain: {fileID: 0}
-  axisFront: {fileID: 3945073134454971290}
-  axisBack: {fileID: 1911404384131543395}
+  axisMain: {fileID: 7955019391188832814}
+  axisFront: {fileID: 0}
+  axisBack: {fileID: 0}
   baseSpeed: 0
   maxSpeed: 15
   minSpeed: -6
