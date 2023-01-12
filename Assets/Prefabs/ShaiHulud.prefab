@@ -13603,7 +13603,7 @@ Transform:
   m_GameObject: {fileID: 6400876075591365613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -12, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6400876076267070052}
@@ -69498,8 +69498,8 @@ MonoBehaviour:
   followTargetSpeed: 20
   followTargetStopDistance: 2
   attackRange: 17
-  attackPosition: {x: 0, y: 3.5, z: 0}
-  hiddenPosition: {x: 0, y: -20, z: 0}
+  attackPosition: {x: 0, y: 7, z: 0}
+  hiddenPosition: {x: 0, y: -40, z: 0}
   outerParticleSystem: {fileID: 7517441605385886015}
   innerParticleSystem: {fileID: 665406426574907163}
   body: {fileID: 6400876075591365613}
@@ -76814,7 +76814,7 @@ Transform:
   m_GameObject: {fileID: 8085007089870074623}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 20, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6400876076926296321}

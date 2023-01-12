@@ -161,7 +161,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 64360199}
   m_Follow: {fileID: 64360199}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 45.4
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -185,8 +185,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46966678}
-  m_LocalRotation: {x: 0.15081298, y: -0.19530411, z: 0.030409226, w: 0.9686006}
-  m_LocalPosition: {x: 43.03, y: 9.28, z: 1.3999996}
+  m_LocalRotation: {x: 0.28987405, y: -0.18881777, z: 0.05844885, w: 0.9364319}
+  m_LocalPosition: {x: 51.03, y: 40.05, z: -20.800001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -201,20 +201,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -44.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9364318
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.28987402
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.18881775
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.058448847
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 34.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327803627, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -22.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2905048061580238901, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2905048061580238901, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2905048061580238901, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2905048061797601524, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
@@ -286,25 +322,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2905048061797601530, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
+        type: 3}
+      propertyPath: m_SlopeLimit
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 2905048061797601531, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
       propertyPath: m_Name
       value: Harvester
       objectReference: {fileID: 0}
+    - target: {fileID: 4926393700660833273, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8019589358163518121, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8019589358163518121, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8019589358163518121, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e88df4d8ea56843a4c1a0f6c33031a, type: 3}
@@ -367,8 +413,8 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
-  orthographic: 1
+  field of view: 45.4
+  orthographic: 0
   orthographic size: 10
   m_Depth: -1
   m_CullingMask:
@@ -392,8 +438,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.15081298, y: -0.19530411, z: 0.030409226, w: 0.9686006}
-  m_LocalPosition: {x: 43.03, y: 9.28, z: 1.3999996}
+  m_LocalRotation: {x: 0.28987405, y: -0.18881777, z: 0.05844885, w: 0.9364319}
+  m_LocalPosition: {x: 51.03, y: 40.05, z: -20.800001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -721,6 +767,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &842832994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2905048061797601531, guid: 82e88df4d8ea56843a4c1a0f6c33031a,
+    type: 3}
+  m_PrefabInstance: {fileID: 64360197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &842833001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842832994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41009f7ce35d4bf8a90602e9646465fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  density: 0.5
+  test: {x: 4, y: 4}
+  size: {x: 5, y: 5}
+  minHeight: 0
+  maxHeight: 1.2
 --- !u!1 &1347844601
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +818,7 @@ TerrainCollider:
   m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: ffd51901b716cde4daf74ce1038366c3, type: 2}
-  m_EnableTreeColliders: 1
+  m_EnableTreeColliders: 0
 --- !u!218 &1347844603
 Terrain:
   m_ObjectHideFlags: 0
@@ -764,10 +833,10 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
+  m_SplatMapDistance: 252
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
