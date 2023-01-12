@@ -105,13 +105,13 @@ namespace Code
             if (turnLeft.IsPressed() && !controlDisabled)
             {
                 // rotationDirection += speed > 0 ? 1f : -1f;
-                rotationDirection += 1f;
+                rotationDirection += -1f;
             }    
         
             if (turnRight.IsPressed() && !controlDisabled)
             {
                 // rotationDirection += speed > 0 ? -1f : 1f;
-                rotationDirection += -1f;
+                rotationDirection += 1f;
             }
 
             rotationSpeed = baseRotationSpeed + speed * angularSpeedMultiplier;
